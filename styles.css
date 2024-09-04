@@ -1,0 +1,898 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logo img {
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2b60ad;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+nav.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+nav.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+nav.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+.hero {
+    position: relative;
+    background: url('Home-Hero.png') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.small-hero-meat {
+    height: 200px;
+    background: url('Meat-Hero.jpg') no-repeat center center/cover;
+}
+
+.small-hero-seafood {
+    height: 200px;
+    background: url('Seafood-Mini-Hero.png') no-repeat center center/cover;
+}
+
+.small-hero-commitment {
+    height: 200px;
+    background: url('hero-image.jpg') no-repeat center center/cover;
+}
+
+.small-hero-story {
+    height: 200px;
+    background: url('seafoodpage.png') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-text-box {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+.hero-text-box h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.hero-text-box p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2b60ad;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .button:hover {
+    background-color: #1f4581;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h5 {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h6 {
+    margin-bottom: 100px;
+    margin-top: 40px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Seafood Page Specific Styles */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Left align the products */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Adjust this to control spacing between items */
+    row-gap: 90px;
+}
+
+.products-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Left align the products */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Adjust this to control spacing between items */
+    row-gap: 1000px;
+}
+
+.product {
+    background-color: #2b60ad;
+    border-radius: 5px;
+    overflow: visible;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+}
+
+.product-img-wrapper {
+    position: relative;
+}
+
+.product-img-wrapper img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+
+.product-img-wrapper-main img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+
+.product-img-wrapper img:hover {
+    transform: translateX(-50%) translateY(-10px); /* Adds a slight lift on hover */
+}
+
+.product-img-wrapper-main img:hover {
+    transform: translateX(-50%) translateY(-10px); /* Adds a slight lift on hover */
+}
+
+.product-info {
+    margin-top: 80px;
+    padding: 10px;
+}
+
+@media (max-width: 992px) {
+    .products .product {
+        width: 45%; /* Two products per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .products .product {
+        width: 100%; /* One product per row on small screens */
+    }
+}
+
+button, .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2b60ad;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+button:hover, .button:hover {
+    background-color: #1f4581;
+}
+
+/* Parallax effect for "The Monarch Promise" */
+.promise {
+    position: relative;
+    text-align: center;
+    min-height: 400px;
+}
+
+.promise-parallax {
+    position: relative;
+    background: url('Monarch-Promise.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 500px; /* Increase height if necessary */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.promise-overlay {
+    position: absolute;
+    bottom: 50px; /* Adjust this value to position the overlay closer to the bottom */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Adjust the background color and opacity as needed */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    z-index: 1; /* Ensure it sits above the image */
+}
+
+
+
+.promises {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Add some space between the overlay and the promises section */
+}
+
+
+.promise-item {
+    flex: 1;
+    max-width: 250px;
+    text-align: center;
+    margin: 10px;
+}
+
+.promise-item img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.promise-item h3 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.contact {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact form input, .contact form textarea, .contact form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.contact form textarea {
+    resize: none;
+    min-height: 150px;
+    overflow: hidden;
+}
+
+.contact form button {
+    background-color: #2b60ad;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+    background-color: #1f4581;
+}
+
+footer {
+    background-color: #fff;
+    padding: 50px 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Add this line for shadow */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px; /* Adjust as needed to prevent overflow */
+    text-align: center; /* Center align the content */
+}
+
+.footer-logo img {
+    height: 70px; /* Increased size */
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-column h3 {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #2b60ad;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #1f4581;
+}
+
+.footer-column form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.footer-column form button {
+    padding: 10px 20px;
+    margin-top: 5px;
+    background-color: #2b60ad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-column form button:hover {
+    background-color: #1f4581;
+}
+
+.footer-column p small {
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.footer-bottom p {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-bottom-links li {
+    margin: 0;
+}
+
+.footer-bottom-links li a {
+    text-decoration: none;
+    color: #2b60ad;
+    transition: color 0.3s;
+}
+
+.footer-bottom-links li a:hover {
+    color: #1f4581;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 75px;
+    right: 35px;
+    display: none;
+    background-color: #2b60ad;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #1f4581;
+}
+
+/* Styles for Our Commitment page */
+.our-commitment {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.our-commitment h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.commitment-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.commitment-content h3 {
+    text-align: center;
+}
+
+
+.commitment-block {
+    flex: 1;
+    max-width: 550px; /* Adjust the width of each block */
+    margin: 0 auto;
+    text-align: left; /* Center align text */
+    margin-bottom: -80px;
+}
+
+.certification-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.certification-logos img {
+    max-width: 150px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.certification-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .footer-column {
+        max-width: 250px; /* Adjust to prevent overlap on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: none; /* Remove max-width for smaller screens */
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .commitment-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .commitment-block {
+        max-width: 100%;
+    }
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 992px) {
+    .products .product {
+        width: 45%; /* Two products per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .products .product {
+        width: 100%; /* One product per row on small screens */
+    }
+}
+
+/* Styles for Product Specification Page */
+.product-specification .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.product-specification h2 {
+    text-align: center;
+}
+
+.specs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.specs-left {
+    flex: 1;
+}
+
+.specs-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.specs-left table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-left th, .specs-left td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.specs-left th {
+    width: 30%;
+    background-color: #f4f4f4;
+}
+
+.specs-left .title-row th {
+    background-color: #2b60ad; /* Blue background for the title row */
+    color: #fff; /* White text color for the title row */
+    text-align: center; /* Center align the text in the title row */
+    font-size: 18px; /* Increase font size for the title row */
+}
+
+.specs-right img {
+    max-width: 100%;
+    border-radius: 0px;
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Additional Styles */
+.our-story .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Homepage Popular Products Section */
+.popular-products-homepage .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Left align the products */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Spacing between items */
+    row-gap: 20px; /* Space between rows */
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.popular-products-homepage .product {
+    background-color: #2b60ad; /* Same background as Seafood page */
+    border-radius: 5px;
+    overflow: visible;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    color: #fff; /* Same text color as Seafood page */
+    padding: 15px;
+    position: relative;
+}
+
+.popular-products-homepage .product-img-wrapper {
+    position: relative;
+}
+
+.popular-products-homepage .product-img-wrapper img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+
+.popular-products-homepage .product-info {
+    margin-top: 80px;
+    padding: 10px;
+}
+
+.popular-products-homepage h2 {
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333; /* Color for heading */
+}
+
+/* Styles for Our Story and Our Commitment pages */
+.our-story, .our-commitment {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.our-story h1, .our-commitment h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.our-story .content, .our-commitment .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.our-story .text, .our-commitment .text {
+    flex: 1;
+    max-width: 800px; /* Limit the width of the text content */
+    margin: 0 auto; /* Center the text content */
+    text-align: left;
+}
+
+.our-story .image, .our-commitment .image {
+    flex: 1;
+}
+
+.our-story .image img, .our-commitment .image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Styles for Homepage Products */
+.homepage-product {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+    display: block; /* Makes the entire product area clickable */
+}
+
+.homepage-product .product {
+    background-color: #2b60ad; /* Blue background color */
+    border-radius: 5px;
+    overflow: visible;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    color: #fff; /* Text color */
+    padding: 15px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+.homepage-product .product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+}
+
+.homepage-product .product-img-wrapper-main {
+    position: relative;
+}
+
+.homepage-product .product-img-wrapper-main img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+
+.homepage-product .product-img-wrapper-main img:hover {
+    transform: translateX(-50%) translateY(-10px); /* Only the image lifts on hover */
+}
+
+.homepage-product .product-info {
+    margin-top: 80px;
+    padding: 10px;
+}
+
+/* Adjust styles for responsiveness */
+@media (max-width: 992px) {
+    .homepage-product .product {
+        width: 45%; /* Two products per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage-product .product {
+        width: 100%; /* One product per row on small screens */
+    }
+}
