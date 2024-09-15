@@ -11,16 +11,6 @@
             hamburger = document.querySelector('.hamburger'),
             navMenu = document.querySelector('nav ul');
 
-        // Hero image transition functionality
-        var heroSection = document.querySelector('.hero');
-        var images = ['hero-image.jpg', 'home-hero.jpg'];  // Add your image URLs here
-        var currentIndex = 0;
-
-        setInterval(function () {
-            currentIndex = (currentIndex + 1) % images.length;  // Loop through images
-            heroSection.style.backgroundImage = 'url(' + images[currentIndex] + ')';
-        }, 5000);  // Change image every 5 seconds
-
         // Floating effect for product images
         productImages.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
